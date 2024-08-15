@@ -28,8 +28,17 @@ jobs:
         distribution: 'temurin'
         java-version: '17'
 
+    - name: List files in root directory
+      run: ls -la
+
+    - name: List files in gradle directory
+      run: ls -la gradle
+
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
+
+    - name: Check Gradle version
+      run: ./gradlew --version
 
     - name: Build with Gradle
       run: ./gradlew build
